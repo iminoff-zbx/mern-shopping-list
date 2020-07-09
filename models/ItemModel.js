@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
@@ -10,7 +9,7 @@ const ItemSchema = new Schema({
         require: true
     },
 
-    data: {
+    date: {
         type: Date,
         default: Date.now
     }
