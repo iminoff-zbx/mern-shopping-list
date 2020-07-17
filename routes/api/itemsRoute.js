@@ -31,6 +31,18 @@ router.get('/:id', (req, res) => {
 
 });
 
+/**------------------------------------ PUT Item -------------------------------------------------- */
+
+// @route PUT api/items
+// @desc PUT item
+// @access Public
+router.put('/:id', (req, res) => {
+
+    let item = Item.findByIdAndUpdate(req.params.id, {name: req.body.name});
+    item.save().then(item => res.json(item));    
+
+});
+
 /**------------------------------------ POST Item ------------------------------------------------- */
 
 // @route POST api/items
