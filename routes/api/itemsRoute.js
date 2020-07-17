@@ -36,10 +36,11 @@ router.get('/:id', (req, res) => {
 // @route PUT api/items
 // @desc PUT item
 // @access Public
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
 
-    let item = Item.findByIdAndUpdate(req.params.id, {name: req.body.name});
-    item.save().then(item => res.json(item));    
+    const id = req.params.id;
+    let itemUpdate = await Item.findOneAndUpdate(id, {name: req.body.name}, {new: true});
+    itemUpdate.save().then(item => res.json(item));    
 
 });
 
