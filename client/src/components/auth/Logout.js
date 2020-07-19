@@ -5,7 +5,7 @@ import { NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 
-export class LogoutModel extends Component {
+export class Logout extends Component {
 
     static propTypes = {
         logout: PropTypes.func.isRequired
@@ -22,6 +22,6 @@ export class LogoutModel extends Component {
     }
 }
 
-export default connect(null, { logout})(LogoutModel);
+export default connect(null, { logout})(Logout);
 
 
