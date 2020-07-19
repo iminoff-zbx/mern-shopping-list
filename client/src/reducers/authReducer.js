@@ -32,7 +32,7 @@ import {
         };
       case LOGIN_SUCCESS:
       case REGISTER_SUCCESS:
-        localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('token', action.payload.token);
         return {
           ...state,
           ...action.payload,
